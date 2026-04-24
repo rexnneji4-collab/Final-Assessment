@@ -41,7 +41,7 @@ export default function HomeScreen() {
 
       <View style={styles.profileview}>
         <View style={styles.userpic}> <Ionicons name='person' size={53} color='grey' /></View>
-        <Text style={styles.userName}>Welcome, Franklin</Text>
+        <Text style={styles.userName}>Welcome, God'slove</Text>
       </View>
 
       <Text style={styles.p1}>Enter your password</Text>

@@ -1,17 +1,17 @@
 
 import { View, Text, Pressable } from "react-native";
 import { TextInput, StyleSheet } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 export default function Email() {
-    const router = useRouter() 
+    const router = useRouter()
 
     return (
 
         <View style={{
             padding: 20,
-            marginTop:20,
+            marginTop: 20,
         }}>
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>Welcome</Text>
 
@@ -57,8 +57,16 @@ export default function Email() {
                 <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>Continue</Text>
             </Pressable>
 
-            <Text style={styles.end}>{<Ionicons name="shield-checkmark" size={20} color='green' />} Deposits insured by NDIC</Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20, }}>
+                <Text style={{ color: 'white', }} >{<Ionicons name="shield-checkmark" size={20} color='green' />} Deposits insured by |</Text>
 
+                <View style={styles.tidal}><Text style={{ color: 'white', fontWeight: 'bold' }}>---tidal</Text></View>
+            </View>
+
+            <View style={{ alignItems: 'center', marginTop: 20, }}>
+                <Text style={{ color: 'grey' }}>Backed by </Text>
+                <Text style={{ color: 'grey', marginTop: 6, }}>Google FOR STARTUPS   <MaterialCommunityIcons name='rhombus' size={13} color='grey' />BINANCE</Text>
+            </View>
 
         </View>
 
@@ -82,6 +90,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 10,
         color: 'white',
+    },
+
+    tidal: {
+        backgroundColor: '#1e4e82',
+        width: '14%',
+        marginLeft: 5,
+        marginTop: 5,
     },
 })
 

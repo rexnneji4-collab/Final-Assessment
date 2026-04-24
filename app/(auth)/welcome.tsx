@@ -1,5 +1,5 @@
 import { View, Pressable, } from "react-native";
-import { Ionicons, AntDesign } from "@expo/vector-icons";
+import { Ionicons, AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Image } from "expo-image";
 import { ScrollView, Text } from "react-native";
 import { PrimaryButton } from "@/components/primary-button";
@@ -42,15 +42,21 @@ export default function Welcome() {
 
                 <Text style={{ textAlign: 'center', marginTop: 10, color: 'white' }}> To get started create an account, if you already have an account we will log you in  </Text>
 
-                <PrimaryButton title='Continue with Email' icon={<Ionicons name="mail-outline" size={20} color='white' />} onPress={() => { }}/>
+                <PrimaryButton title='Continue with Email' icon={<Ionicons name="mail-outline" size={20} color='white' />} onPress={() => { }} />
 
                 <PrimaryButton title='Continue with Google' icon={<AntDesign name="google" size={20} color='white' />} onPress={() => { }} />
 
                 <PrimaryButton title='Continue with Apple' icon={<AntDesign name="apple" size={20} color='white' />} onPress={() => { }} />
+                <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20, }}>
+                    <Text style={{ color: 'white', }} >{<Ionicons name="shield-checkmark" size={20} color='green' />} Deposits insured by |</Text>
 
-                <Text style={styles.end}>{<Ionicons name="shield-checkmark" size={20} color='green' />} Deposits insured by NDIC</Text>
-                <Text style={styles.end}>Reviewed by</Text>
-                <Text style={styles.end}>Google Play store & App store</Text>
+                    <View style={styles.tidal}><Text style={{ color: 'white', fontWeight: 'bold' }}>---tidal</Text></View>
+                </View>
+
+                <View style={{ alignItems: 'center', marginTop: 20, }}>
+                    <Text style={{ color: 'grey' }}>Backed by </Text>
+                    <Text style={{ color: 'grey', marginTop: 6, }}>Google FOR STARTUPS   <MaterialCommunityIcons name='rhombus' size={13} color='grey' />BINANCE</Text>
+                </View>
             </View>
         </ScrollView>
     );
@@ -85,6 +91,13 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 10,
         color: 'white',
+    },
+
+    tidal: {
+        backgroundColor: '#1e4e82',
+        width: '14%',
+        marginLeft: 5,
+        marginTop: 5,
     },
     // end1: {
     //   backgroundColor: '#007AFF',
